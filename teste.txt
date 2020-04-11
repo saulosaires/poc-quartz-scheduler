@@ -1,0 +1,15 @@
+   if(cspace.disabled===false){
+   
+    $window.location.href=$state.href('app.portal.loaded.home');
+	
+	
+	
+	
+	 $scope.cspaces = [];
+                        angular.forEach(result, function(cspace){
+                              if(cspace.disabled===false){
+                        	    cspace.status = cspaceRtsService.getStatus(cspace.id);
+                        	    $scope.cspaces.push(cspace);
+                        	    console.log( $scope.cspaces);
+                        	}
+                        });
